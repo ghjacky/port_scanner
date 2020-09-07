@@ -70,18 +70,18 @@ func genIPS(il []string) *IPS {
 	ip[quotient] = lastNetNode
 	switch quotient {
 	case 2:
-		for i := lastNetNode; ; i++ {
+		for i := lastNetNode; i < 255; i++ {
 			if i > 255 {
 				break
 			}
 			ip[2] = i
-			for n := 1; i < 255; i++ {
+			for n := 1; n < 255; n++ {
 				ip[3] = uint8(n)
 				*ips = append(*ips, *ip)
 			}
 		}
 	case 3:
-		for i := lastNetNode; ; i++ {
+		for i := lastNetNode; i < 255; i++ {
 			if i == 0 {
 				continue
 			}

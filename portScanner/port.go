@@ -34,7 +34,7 @@ func NewPorts(ps string) *PORTS {
 	}
 	start, e1 := strconv.Atoi(_portl[0])
 	stop, e2 := strconv.Atoi(_portl[1])
-	if e1 != nil || e2 != nil || start <= 0 || stop <= 0 || start > 65535 || stop > 65535 || start < stop {
+	if e1 != nil || e2 != nil || start <= 0 || stop <= 0 || start > 65535 || stop > 65535 || start > stop {
 		fmt.Println("端口范围输入有误")
 		return &PORTS{}
 	}
